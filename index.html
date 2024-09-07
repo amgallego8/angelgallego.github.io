@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Declaración del tipo de documento HTML5 y definición del idioma de la página como español -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Establece el conjunto de caracteres como UTF-8 para soportar la mayoría de caracteres (incluidos acentos) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define la configuración de la vista para hacer que la página sea responsive, ajustando su escala en dispositivos móviles -->
+
+    <title>Ángel Gallego - Científico de Datos & Experto en BI</title>
+    <!-- Título de la página que aparecerá en la pestaña del navegador -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Vincula el archivo de estilos CSS externo para aplicar los estilos a la página -->
+</head>
+
+<body>
+    <!-- El contenido principal de la página empieza aquí -->
+
+    <div class="container">
+        <!-- Contenedor principal que alinea el contenido en el centro de la pantalla usando flexbox -->
+        
+        <canvas id="backgroundCanvas"></canvas>
+        <!-- Canvas donde se dibuja el fondo animado, controlado por JavaScript -->
+        
+        <div class="card">
+            <!-- Tarjeta que contiene toda la información del perfil, como imagen, nombre y enlaces sociales -->
+            
+            <div class="profile-image">
+                <!-- Contenedor para la imagen de perfil con estilos específicos -->
+                
+                <img src="https://avatars.githubusercontent.com/u/174169496?v=4" alt="angel_gallego8">
+                <!-- Imagen de perfil. Se usa un enlace externo para cargar la imagen desde GitHub -->
+            </div>
+
+            <h1>Ángel Gallego</h1>
+            <!-- Encabezado principal que muestra el nombre de la persona -->
+
+            <p class="subtitle">Científico de datos & Experto en Business Intelligence</p>
+            <!-- Subtítulo que describe la especialización de Ángel Gallego -->
+
+            <div class="social-links">
+                <!-- Contenedor para los enlaces a redes sociales con disposición en fila -->
+                
+                <!-- Enlace a LinkedIn con un ícono SVG -->
+                <a href="https://www.linkedin.com/in/amgallego95/" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+                    <!-- target="_blank" abre el enlace en una nueva pestaña. "noopener noreferrer" mejora la seguridad -->
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- SVG que contiene el ícono de LinkedIn -->
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+
+                <!-- Enlace a GitHub con un ícono SVG -->
+                <a href="https://github.com/amgallego8" target="_blank" rel="noopener noreferrer" class="social-button github">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77A5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+
+                <!-- Enlace a Instagram con un ícono SVG -->
+                <a href="https://www.instagram.com/angel_gallego8/" target="_blank" rel="noopener noreferrer" class="social-button instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+
+                <!-- Enlace adicional con un ícono SVG genérico -->
+                <a href="#" class="social-button cloudia">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                    </svg>
+                </a>
+
+                <!-- Enlace de email con un ícono SVG -->
+                <a href="#" class="social-button email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="section-buttons">
+                <!-- Contenedor para los botones de cada sección (Perfil, Habilidades, Experiencia) -->
+                
+                <button id="profileBtn" class="section-button">Perfil</button>
+                <!-- Botón para abrir la sección "Perfil" -->
+
+                <button id="skillsBtn" class="section-button">Habilidades</button>
+                <!-- Botón para abrir la sección "Habilidades" -->
+
+                <button id="experienceBtn" class="section-button">Experiencia</button>
+                <!-- Botón para abrir la sección "Experiencia" -->
+            </div>
+
+            <div id="sectionContent" class="section-content"></div>
+            <!-- Contenedor vacío donde se mostrará el contenido dinámico de la sección seleccionada -->
+
+            <div class="scroll-indicator">
+                <!-- Indicador de desplazamiento, una flecha que indica que se puede hacer scroll -->
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+                <!-- Ícono SVG que muestra una flecha hacia abajo -->
+            </div>
+        </div>
+    </div>
+
+    <script src="effects.js"></script>
+    <!-- Archivo JavaScript externo que controla las interacciones y animaciones en la página -->
+</body>
+</html>

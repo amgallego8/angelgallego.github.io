@@ -1,0 +1,196 @@
+body, html {
+    margin: 0; /*Elimina los márgenes predeterminados del cuerpo y del HTML */
+    padding: 0; /* Elimina el relleno predeterminado */
+    font-family: Arial, sans-serif; /* Aplica la fuente Arial, con una alternativa sans-serif si no está disponible */
+    height: 100%; /* Asegura que el cuerpo y HTML ocupen el 100% de la altura de la ventana */
+    overflow: hidden; /* Evita el desplazamiento en la página principal */
+}
+
+.container {
+    position: relative; /* Permite posicionar elementos dentro del contenedor en relación a este */
+    width: 100%; /* El contenedor ocupa el 100% del ancho de la ventana */
+    height: 100%; /* El contenedor ocupa el 100% de la altura de la ventana */
+    display: flex; /* Usa Flexbox para la disposición del contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+#backgroundCanvas {
+    position: absolute; /* El canvas está en una posición absoluta respecto al contenedor */
+    top: 0; /* Se coloca en la parte superior de la ventana */
+    left: 0; /* Se coloca en la parte izquierda de la ventana */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+    height: 100%; /* Ocupa todo el alto de la ventana */
+    filter: blur(2px); /* Aplica un desenfoque de 4px para un efecto visual */
+}
+
+.card {
+    opacity: 0; /* Hace invisible la tarjeta al inicio para la animación de fade-in */
+    animation: fadeIn 2s forwards; /* Aplica una animación de 2 segundos para que la tarjeta aparezca gradualmente */
+    backdrop-filter: blur(4px); /* Desenfoque adicional detrás de la tarjeta (simula el efecto de vidrio esmerilado) */
+    border-radius: 24px; /* Bordes redondeados con un radio de 24px */
+    padding: 2rem; /* Espaciado interno de 2rem alrededor del contenido */
+    width: 80%; /* La tarjeta ocupa el 90% del ancho disponible */
+    max-width: 800px; /* Limita el ancho máximo de la tarjeta a 400px */
+    box-shadow: 0 10px 25px rgba(0, 10, 10, 30); /* Sombra con desplazamiento de 10px hacia abajo y un desenfoque de 25px */
+    z-index: 10; /* Coloca la tarjeta encima de otros elementos en el mismo contenedor */
+    overflow-y: auto; /* Permite el desplazamiento vertical dentro de la tarjeta si el contenido supera la altura */
+    max-height: 70vh; /* La tarjeta puede ocupar hasta el 80% de la altura de la ventana */
+    scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+}
+
+/* Estilo personalizado para scrollbar */
+.card::-webkit-scrollbar {
+    width: 0px; /* Define el ancho del scrollbar a 0px */
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3); /* Color del scrollbar con opacidad del 30% */
+    border-radius: 10px; /* Bordes redondeados del scrollbar */
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Cambia el color del scrollbar cuando el mouse lo pasa por encima */
+}
+
+.profile-image {
+    width: 128px; /* Ancho de la imagen de perfil */
+    height: 128px; /* Altura de la imagen de perfil */
+    border: 6px solid #60A5FA; /* Borde de 4px de color azul claro */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    margin: 0 auto 1rem; /* Centra la imagen horizontalmente y añade un margen inferior de 1rem */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+}
+
+.profile-image img {
+    width: 100%; /* La imagen ocupa el 100% del contenedor */
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor, cortando si es necesario */
+}
+
+h1 {
+    color: #F0F9FF; /* Color de texto blanco-azulado */
+    text-align: center; /* Centra el texto */
+    font-size: 2rem; /* Tamaño de fuente de 2rem */
+    margin-bottom: 0.5rem; /* Añade un margen inferior de 0.5rem */
+}
+
+.subtitle {
+    color: #BFDBFE; /* Color azul claro */
+    text-align: center; /* Centra el texto */
+    font-size: 1rem; /* Tamaño de fuente de 1rem */
+    margin-bottom: 1.5rem; /* Añade un margen inferior de 1.5rem */
+}
+
+
+.social-links {
+    display: flex; /* Dispone los enlaces de forma flexible (en fila por defecto) */
+    justify-content: center; /* Centra los enlaces de redes sociales horizontalmente */
+    gap: 1rem; /* Añade un espacio de 1rem entre los botones */
+    margin-bottom: 1.5rem; /* Añade un margen inferior de 1.5rem */
+}
+
+.social-button {
+    display: flex; /* Botones como contenedores flexibles para centrar su contenido */
+    justify-content: center; /* Centra el contenido dentro del botón */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 40px; /* Ancho de cada botón */
+    height: 40px; /* Altura de cada botón */
+    border-radius: 50%; /* Hace que los botones sean circulares */
+    transition: all 0.3s ease; /* Transición suave para los cambios de estado (hover) */
+}
+
+.social-button svg {
+    width: 24px; /* Tamaño de los íconos SVG dentro de los botones */
+    height: 24px; /* Altura de los íconos SVG */
+    color: white; /* Color de los íconos */
+}
+
+.linkedin { background: linear-gradient(to right, #0077B5, #00A0DC); }
+.github { background: linear-gradient(to right, #24292E, #404448); }
+.instagram { background: linear-gradient(to right, #833AB4, #FD1D1D); }
+.cloudia { background: linear-gradient(to right, #4285F4, #34A853); }
+.email { background: linear-gradient(to right, #D44638, #B23121); }
+
+.social-button:hover {
+    transform: scale(1.1);
+}
+
+.section-buttons {
+    display: flex; /* Los botones de las secciones se disponen en fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 1rem; /* Añade un espacio de 1rem entre los botones */
+    margin-bottom: 1.5rem; /* Añade un margen inferior de 1.5rem */
+}
+
+.section-button {
+    background-color: #2563EB; /* Fondo azul */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 9999px; /* Bordes redondeados tipo píldora */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: all 0.3s ease; /* Transición suave en el hover */
+}
+
+.section-button:hover {
+    background-color: #1D4ED8; /* Color más oscuro al pasar el mouse */
+}
+
+.section-button.active {
+    background-color: #1E40AF; /* Fondo aún más oscuro cuando está activo */
+}
+
+.section-content {
+    background-color: rgba(30, 58, 138, 0.5); /* Fondo translúcido para el contenido de las secciones */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 1rem; /* Espaciado interno */
+    margin-bottom: 1.5rem; /* Añade margen inferior */
+    color: #E0F2FE; /* Color de texto azul claro */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño */
+    line-height: 1.5; /* Altura de línea */
+    max-height: 0; /* Altura inicial de 0 para ocultar el contenido */
+    overflow: hidden; /* Oculta el contenido desbordado */
+    opacity: 0; /* Oculta visualmente la sección (fade-out) */
+    transition: max-height 1s ease, padding 1s ease, opacity 1s ease; /* Transiciones para el efecto de fade y despliegue */
+}
+
+.section-content.active {
+    max-height: 300px; /* Muestra el contenido con una altura máxima de 300px */
+    opacity: 1; /* Se hace visible (fade-in) */
+    padding: 1rem; /* Mantiene el espaciado interno */
+}
+
+
+.scroll-indicator {
+    text-align: center; /* Centra el indicador de desplazamiento */
+}
+
+.scroll-indicator svg {
+    width: 24px; /* Tamaño del ícono */
+    height: 24px; /* Altura del ícono */
+    color: #60A5FA; /* Color azul claro */
+    animation: bounce 2s infinite; /* Animación de rebote constante */
+}
+
+
+/* Definición de la animación */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+    .card {
+        padding: 1.5rem; /* Reduce el espaciado interno en pantallas pequeñas */
+    }
+
+    .section-buttons {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+    }
+
+    .section-button {
+        width: 100%; /* Los botones ocupan el ancho completo */
+    }
+}
